@@ -3,7 +3,7 @@ version: '3.5'
 services:
 
   db:
-    image: postgres:10.5
+    image: postgres:16-alpine
     container_name: postgres
     ports:
       - '5432:5432'
@@ -15,7 +15,7 @@ services:
       - './db/init:/docker-entrypoint-initdb.d/'
 
   flask-api:
-    container_name: app-app
+    container_name: flask-app
     restart: always
     build:
       context: ./backend/
