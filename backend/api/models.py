@@ -5,6 +5,7 @@ from sqlalchemy.ext.declarative import DeclarativeMeta
 
 db = SQLAlchemy()
 
+
 class Player(db.Model):
     __tablename__ = 'players'
     firstname = db.Column(db.String(100), nullable=False, primary_key=True)
@@ -12,6 +13,7 @@ class Player(db.Model):
 
     def __repr__(self):
         return '<Player %r>' % self.firstname + ' ' + self.lastname
+
 
 def to_dict(obj):
     if isinstance(obj.__class__, DeclarativeMeta):
